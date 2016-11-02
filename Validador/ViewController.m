@@ -10,9 +10,26 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic)IBOutlet UILabel* usuario;
+@property (weak, nonatomic)IBOutlet UITextField* textoUsuario;
+@property (weak, nonatomic)IBOutlet UILabel* password;
+@property (weak, nonatomic)IBOutlet UITextField* textoPassword;
+@property (weak, nonatomic)IBOutlet UITextField* textoValidar;
+
+
 @end
 
 @implementation ViewController
+
+-(IBAction)validar:(id)sender{
+    if([_textoUsuario.text isEqualToString:@"pepe"]){
+        if([_textoPassword.text isEqualToString:@"hola"]){
+            _textoValidar.text = @"Valido";
+        }
+    }else{
+        _textoValidar.text = @"No Válido";
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
